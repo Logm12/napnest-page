@@ -1,45 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #0a110e; /* Deep Starbucks Forest Black */
-  --foreground: #f4f2eb; /* Cozy Warm Cream */
-  --starbucks-green: #00704A;
-  --starbucks-dark-green: #1e3932;
-  --starbucks-gold: #cba258;
+  --background: #f9f8f6; /* Soft warm café cream background */
+  --foreground: rgba(0, 0, 0, 0.87); /* Deep charcoal gray for soft high contrast */
+  --starbucks-green: #006241; /* Signature Starbucks Green */
+  --starbucks-accent: #00754A; /* Brighter accent green */
+  --starbucks-house: #1E3932; /* Near-black house green */
+  --starbucks-cream: #f2f0eb; /* Coffeehouse paper napkin cream */
+  --starbucks-ceramic: #edebe9; /* Ceramic off-white */
+  --starbucks-gold: #cba258; /* Rewards Gold */
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #0a110e;
-  color: #f4f2eb;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   scroll-behavior: smooth;
   min-height: 100vh;
+  letter-spacing: -0.01em; /* Confidence tracking */
 }
 
-/* Custom styled ranges for timeline slider */
+/* Custom styled ranges for timeline slider - Starbucks green theme */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #edebe9;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #00704a; /* Starbucks Green */
+  background: var(--starbucks-accent);
+  border: 2px solid #ffffff;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 112, 74, 0.5);
-  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 117, 74, 0.3);
+  transition: transform 0.1s ease, background 0.1s ease;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #008f5d;
+  background: var(--starbucks-green);
   transform: scale(1.1);
+}
+
+/* Base custom styles to reduce gaming look */
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #edebe9;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 0px 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.starbucks-btn-primary {
+  background: var(--starbucks-accent);
+  color: #ffffff;
+  border: 1px solid var(--starbucks-accent);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.starbucks-btn-primary:active {
+  transform: scale(0.95);
+}
+
+.starbucks-btn-secondary {
+  background: transparent;
+  color: var(--starbucks-accent);
+  border: 1.5px solid var(--starbucks-accent);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.starbucks-btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #edebe9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cba258;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--starbucks-accent);
 }

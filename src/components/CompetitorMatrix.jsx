@@ -6,93 +6,93 @@ import { Check, X, ShieldAlert, Sparkles, Trophy } from "lucide-react";
 export default function CompetitorMatrix() {
   const comparisonData = [
     {
-      feature: "Fireproofing & Shell Material",
-      napnest: "Class-A Red-Core MDF Fireproof Wood composite",
-      cafe: "Basic plywood partitions (High risk)",
-      office: "Open desks or fabric dividers (Unprotected)",
+      feature: "Chất liệu & An toàn chống cháy",
+      napnest: "Khung gỗ sồi composite Red-Core Class-A chống cháy chuẩn y tế",
+      cafe: "Vách ngăn gỗ dán thông thường (Nguy cơ cháy cao)",
+      office: "Bàn làm việc mở hoặc vách ngăn vải (Không bảo vệ)",
       highlight: true
     },
     {
-      feature: "Sound dampening barriers",
-      napnest: "Dual-layer shell & Acoustic insulation foam (-35dB)",
-      cafe: "Curtain flaps or thin drywall boards (-5dB)",
-      office: "None - constant open space interruptions (0dB)",
+      feature: "Khả năng cách âm riêng tư",
+      napnest: "Hộp vỏ kép cách âm tiêu âm chuyên sâu giảm tới -35dB",
+      cafe: "Rèm che hoặc vách thạch cao mỏng (Giảm ồn kém -5dB)",
+      office: "Không có - Thường xuyên bị gián đoạn âm thanh (0dB)",
       highlight: true
     },
     {
-      feature: "Sanitization & Disinfection",
-      napnest: "Clinical 60s automated UV-C sterilization loop",
-      cafe: "Irregular manual spray wipes",
-      office: "Periodic cleaning crew sweeps",
+      feature: "Vệ sinh & Khử khuẩn",
+      napnest: "Hệ thống khử khuẩn UV-C tự động 60s sau mỗi phiên nghỉ",
+      cafe: "Lau dọn thủ công không định kỳ",
+      office: "Lao công dọn dẹp định kỳ cuối ngày",
       highlight: true
     },
     {
-      feature: "Climate & Air Filtration",
-      napnest: "HEPA-13 active flow ventilation",
-      cafe: "Shared standard room AC ducting",
-      office: "Central ventilation filters",
+      feature: "Lọc khí & Điều hòa",
+      napnest: "Hệ thống gió sạch độc lập màng lọc HEPA-13",
+      cafe: "Dùng chung điều hòa tổng tòa nhà",
+      office: "Điều hòa tổng không có lọc khí chuyên dụng",
       highlight: false
     },
     {
-      feature: "LED Circadian Lighting",
-      napnest: "Customizable color spectrum (Amber/Cyan/Purple)",
-      cafe: "Standard white fluorescents or dark room",
-      office: "Harsh fluorescent white panels",
+      feature: "Ánh sáng sinh học",
+      napnest: "Đèn LED mô phỏng chu kỳ giấc ngủ tự nhiên",
+      cafe: "Đèn tuýp huỳnh quang hoặc bóng tối mờ mắt",
+      office: "Ánh sáng đèn huỳnh quang văn phòng gay gắt",
       highlight: false
     }
   ];
 
   return (
-    <section id="matrix-section" className="bg-slate-900/50 py-20 border-b border-slate-900">
+    <section id="matrix-section" className="bg-[#f9f8f6] py-20 border-b border-[#edebe9]">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-950/20 text-blue-400 text-xs font-mono font-medium">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <Trophy className="w-3.5 h-3.5" />
-            <span>INDUSTRY LEADERSHIP</span>
+            <span>SO SÁNH TÍNH NĂNG</span>
           </div>
-          <h2 className="text-4xl font-extrabold text-white tracking-tight">
-            Designed for Performance
+          <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
+            Điểm Khác Biệt Của NapNest
           </h2>
-          <p className="text-slate-400 font-light">
-            We contrasted NapNest against traditional options. Here is how our premium engineering features rank side-by-side.
+          <p className="text-slate-650 font-light">
+            Chúng tôi đối chiếu các thông số kỹ thuật của cabin NapNest với các phương án nghỉ ngơi truyền thống.
           </p>
         </div>
 
         {/* Matrix Card */}
-        <div className="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="bg-white border border-[#edebe9] rounded-3xl overflow-hidden shadow-sm">
           
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
-                <tr className="bg-slate-900/80 border-b border-slate-800 text-xs font-mono text-slate-400 uppercase">
-                  <th className="py-5 px-6 font-bold">Parameters Checklist</th>
-                  <th className="py-5 px-6 font-bold text-blue-400 flex items-center gap-1.5">
-                    <Sparkles className="w-4 h-4 text-amber-500 animate-spin" style={{ animationDuration: "3s" }} />
-                    NapNest Module
+                <tr className="bg-[#f9f8f6] border-b border-[#edebe9] text-xs font-mono text-slate-500 uppercase">
+                  <th className="py-5 px-6 font-bold">Thông số / Tiện ích</th>
+                  <th className="py-5 px-6 font-bold text-[#006241] flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-[#cba258] animate-pulse" />
+                    Cabin NapNest
                   </th>
-                  <th className="py-5 px-6 font-bold">Traditional Nap Cafes</th>
-                  <th className="py-5 px-6 font-bold">Standard Office Desk</th>
+                  <th className="py-5 px-6 font-bold">Cà phê ngủ trưa</th>
+                  <th className="py-5 px-6 font-bold">Ngủ tại bàn văn phòng</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 text-sm">
+              <tbody className="divide-y divide-[#edebe9] text-sm text-slate-700">
                 {comparisonData.map((row, idx) => (
                   <tr
                     key={idx}
-                    className={`transition-colors hover:bg-slate-900/20 ${
-                      row.highlight ? "bg-blue-950/5" : ""
+                    className={`transition-colors hover:bg-[#f2f0eb]/20 ${
+                      row.highlight ? "bg-[#d4e9e2]/5" : ""
                     }`}
                   >
                     {/* Feature Label */}
-                    <td className="py-5 px-6 font-semibold text-slate-200">
+                    <td className="py-5 px-6 font-bold text-slate-800">
                       {row.feature}
                     </td>
 
                     {/* NapNest Score */}
-                    <td className="py-5 px-6 font-medium text-white bg-blue-950/10 border-l border-r border-blue-500/10">
+                    <td className="py-5 px-6 font-semibold text-[#006241] bg-[#d4e9e2]/10 border-l border-r border-[#edebe9]/60">
                       <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full flex items-center justify-center shrink-0">
+                        <div className="w-5 h-5 bg-[#d4e9e2] text-[#00754A] border border-emerald-300 rounded-full flex items-center justify-center shrink-0">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                         <span>{row.napnest}</span>
@@ -100,9 +100,9 @@ export default function CompetitorMatrix() {
                     </td>
 
                     {/* Cafe Score */}
-                    <td className="py-5 px-6 text-slate-400 font-light">
+                    <td className="py-5 px-6 text-slate-500 font-light">
                       <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 bg-red-500/15 text-red-400 border border-red-500/25 rounded-full flex items-center justify-center shrink-0">
+                        <div className="w-5 h-5 bg-red-50 text-red-500 border border-red-150 rounded-full flex items-center justify-center shrink-0">
                           <X className="w-3.5 h-3.5" />
                         </div>
                         <span>{row.cafe}</span>
@@ -110,9 +110,9 @@ export default function CompetitorMatrix() {
                     </td>
 
                     {/* Office Score */}
-                    <td className="py-5 px-6 text-slate-400 font-light">
+                    <td className="py-5 px-6 text-slate-500 font-light">
                       <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 bg-red-500/15 text-red-400 border border-red-500/25 rounded-full flex items-center justify-center shrink-0">
+                        <div className="w-5 h-5 bg-red-50 text-red-500 border border-red-150 rounded-full flex items-center justify-center shrink-0">
                           <X className="w-3.5 h-3.5" />
                         </div>
                         <span>{row.office}</span>
@@ -125,9 +125,9 @@ export default function CompetitorMatrix() {
           </div>
 
           {/* Matrix Footer Note */}
-          <div className="bg-slate-900/60 p-5 border-t border-slate-800/80 flex items-center gap-2 text-xs text-slate-500 font-mono">
-            <ShieldAlert className="w-4 h-4 text-blue-400 shrink-0" />
-            <span>Class-A specifications are fully certified under International Safety and Ergonomics Standard Codes.</span>
+          <div className="bg-[#f9f8f6] p-5 border-t border-[#edebe9] flex items-center gap-2 text-xs text-slate-500 font-mono">
+            <ShieldAlert className="w-4 h-4 text-[#00754A] shrink-0" />
+            <span>Mọi linh kiện cấu thành trạm ngủ NapNest đều tuân thủ các chỉ chuẩn quốc tế về công thái học và an toàn điện y tế.</span>
           </div>
 
         </div>

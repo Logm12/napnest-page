@@ -8,7 +8,6 @@ export default function FinancialsBoard() {
   const [loadTier, setLoadTier] = useState("Medium"); // Low, Medium, Full
   const [mounted, setMounted] = useState(false);
 
-  // Recharts needs client-side mounting to avoid hydration issues in Next.js App Router
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -17,41 +16,40 @@ export default function FinancialsBoard() {
     Low: {
       units: 16,
       dailyUsage: 16,
-      averageTicket: 84000, // Average 3 hours booking
-      monthlyRevenue: 16 * 84000 * 30, // 40.3M VND
+      averageTicket: 84000,
+      monthlyRevenue: 16 * 84000 * 30,
       monthlyOpEx: 18000000,
       monthlyNetProfit: (16 * 84000 * 30) - 18000000,
       breakevenMonths: 34,
-      initialCapex: 750000000, // 750M VND
-      desc: "Low operational volume scale. Simulates localized corporate installations."
+      initialCapex: 750000000,
+      desc: "Mô hình quy mô nhỏ lắp đặt tại các văn phòng nhỏ hoặc quán cà phê vệ tinh."
     },
     Medium: {
       units: 32,
       dailyUsage: 32,
       averageTicket: 84000,
-      monthlyRevenue: 32 * 84000 * 30, // 80.6M VND
+      monthlyRevenue: 32 * 84000 * 30,
       monthlyOpEx: 28000000,
       monthlyNetProfit: (32 * 84000 * 30) - 28000000,
       breakevenMonths: 26,
-      initialCapex: 1350000000, // 1.35B VND
-      desc: "Medium volume scale. Simulates typical co-working hubs or hybrid transit locations."
+      initialCapex: 1350000000,
+      desc: "Quy mô trung bình thích hợp cho không gian co-working, đại học hoặc ga tàu."
     },
     Full: {
       units: 48,
       dailyUsage: 48,
-      averageTicket: 99000, // Average 4 hours booking
-      monthlyRevenue: 48 * 99000 * 30, // 142.5M VND
+      averageTicket: 99000,
+      monthlyRevenue: 48 * 99000 * 30,
       monthlyOpEx: 38000000,
       monthlyNetProfit: (48 * 99000 * 30) - 38000000,
       breakevenMonths: 19,
-      initialCapex: 1950000000, // 1.95B VND
-      desc: "Maximum capacity scale. Simulates airport lounges or 24/7 high-density tech hubs."
+      initialCapex: 1950000000,
+      desc: "Công suất tối đa lắp đặt tại các sảnh sân bay, bệnh viện hoặc khu vực 24/7."
     }
   };
 
   const currentStats = TIER_STATS[loadTier];
 
-  // Generate dynamic chart data based on selected load tier
   const generateChartData = () => {
     const data = [];
     const months = 36;
@@ -59,11 +57,10 @@ export default function FinancialsBoard() {
     const initialCapex = currentStats.initialCapex;
 
     for (let m = 0; m <= months; m += 3) {
-      // Cumulative Net Cash Flow: Initial Capex is negative, climbs with profits
       const netCashFlow = -initialCapex + (m * monthlyProfit);
       data.push({
-        month: `M${m}`,
-        VND: Math.round(netCashFlow / 1000000), // convert to Millions VND for cleaner graphing
+        month: `Tháng ${m}`,
+        VND: Math.round(netCashFlow / 1000000),
       });
     }
     return data;
@@ -72,24 +69,24 @@ export default function FinancialsBoard() {
   const chartData = generateChartData();
 
   return (
-    <section id="investor-section" className="bg-slate-950 py-20 relative overflow-hidden border-b border-slate-900">
+    <section id="investor-section" className="bg-[#f2f0eb] py-20 relative overflow-hidden border-b border-[#edebe9]">
       
       {/* Decorative Blur BG */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-950/20 text-indigo-400 text-xs font-mono font-medium">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <Landmark className="w-3.5 h-3.5" />
-            <span>FINANCIAL PITCH BOARD</span>
+            <span>KẾ HOẠCH TÀI CHÍNH</span>
           </div>
-          <h2 className="text-4xl font-extrabold text-white tracking-tight">
-            Investor Capacity &amp; Break-Even Modifiers
+          <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
+            Hiệu Suất Đầu Tư &amp; Điểm Hòa Vốn
           </h2>
-          <p className="text-slate-400 font-light">
-            Interactive modeling engine demonstrating the rapid break-even scheduling of NapNest hubs under various capacity scaling benchmarks.
+          <p className="text-slate-600 font-light">
+            Bảng tính giả lập dòng tiền tích lũy và thời gian hoàn vốn thực tế của dự án NapNest dưới các mức công suất vận hành khác nhau.
           </p>
         </div>
 
@@ -101,8 +98,8 @@ export default function FinancialsBoard() {
             <div className="space-y-6">
               {/* Capacity Multi-Stage Selectors */}
               <div className="space-y-3">
-                <span className="text-xs font-semibold tracking-wider text-slate-400 uppercase font-mono">
-                  Select Hub Operational Capacity
+                <span className="text-xs font-bold tracking-wider text-slate-500 uppercase font-mono">
+                  Chọn Quy Mô Vận Hành Trạm ngủ
                 </span>
                 
                 <div className="flex flex-col gap-3">
@@ -113,26 +110,26 @@ export default function FinancialsBoard() {
                       <button
                         key={tier}
                         onClick={() => setLoadTier(tier)}
-                        className={`flex items-start justify-between p-4 rounded-xl border text-left transition-all duration-300 cursor-pointer ${
+                        className={`flex items-start justify-between p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer ${
                           isSelected
-                            ? "border-indigo-500 bg-indigo-950/30 text-white"
-                            : "border-slate-800 bg-slate-900/40 text-slate-400 hover:border-slate-700"
+                            ? "border-[#00754A] bg-[#d4e9e2]/30 text-[#006241]"
+                            : "border-[#edebe9] bg-white text-slate-650 hover:border-slate-355"
                         }`}
                       >
                         <div className="flex gap-3">
                           <div className={`mt-0.5 w-4 h-4 rounded border flex items-center justify-center ${
-                            isSelected ? "border-indigo-400 bg-indigo-500 text-white" : "border-slate-600"
+                            isSelected ? "border-[#00754A] bg-[#00754A] text-white" : "border-slate-300"
                           }`}>
-                            {isSelected && <CheckSquare className="w-3.5 h-3.5" />}
+                            {isSelected && <CheckSquare className="w-3 h-3" />}
                           </div>
                           <div>
-                            <p className="text-sm font-bold text-slate-200">{tier} Load Capacity</p>
-                            <p className="text-[11px] text-slate-400 mt-0.5">{stats.desc}</p>
+                            <p className="text-sm font-bold text-slate-800">Quy mô {tier === "Low" ? "Nhỏ" : tier === "Medium" ? "Vừa" : "Tối đa"}</p>
+                            <p className="text-xs text-slate-500 mt-0.5 font-light leading-snug">{stats.desc}</p>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <p className="text-sm font-bold text-indigo-400">{stats.units} Pods</p>
-                          <p className="text-[10px] text-slate-500 font-mono mt-0.5">daily usages</p>
+                        <div className="text-right shrink-0 ml-4">
+                          <p className="text-sm font-bold text-[#00754A]">{stats.units} Cabin</p>
+                          <p className="text-[10px] text-slate-400 font-mono mt-0.5">lượt nghỉ / ngày</p>
                         </div>
                       </button>
                     );
@@ -142,56 +139,56 @@ export default function FinancialsBoard() {
 
               {/* Dynamic Financial Readings indicators */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-900 border border-slate-850 rounded-2xl p-4 space-y-1">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <DollarSign className="w-4 h-4 text-emerald-500" />
-                    <span className="text-[10px] font-mono font-semibold">EST. MONTHLY REVENUE</span>
+                <div className="bg-white border border-[#edebe9] rounded-2xl p-4 space-y-1 shadow-sm">
+                  <div className="flex items-center gap-1.5 text-slate-500">
+                    <DollarSign className="w-4 h-4 text-[#00754A]" />
+                    <span className="text-[10px] font-mono font-bold">DOANH THU THÁNG</span>
                   </div>
-                  <p className="text-lg font-black text-white">
-                    {Math.round(currentStats.monthlyRevenue / 1000000)}M VND
+                  <p className="text-xl font-bold text-slate-800">
+                    {Math.round(currentStats.monthlyRevenue / 1000000)}Tr VND
                   </p>
-                  <p className="text-[9px] text-slate-500 font-mono">Based on ~{currentStats.averageTicket.toLocaleString()} ticket average</p>
+                  <p className="text-[9px] text-slate-400 font-mono">Tính trên vé trung bình {currentStats.averageTicket === 84000 ? "84.000" : "99.000"}đ</p>
                 </div>
 
-                <div className="bg-slate-900 border border-slate-850 rounded-2xl p-4 space-y-1">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <TrendingUp className="w-4 h-4 text-indigo-500" />
-                    <span className="text-[10px] font-mono font-semibold">EST. NET MARGIN</span>
+                <div className="bg-white border border-[#edebe9] rounded-2xl p-4 space-y-1 shadow-sm">
+                  <div className="flex items-center gap-1.5 text-slate-500">
+                    <TrendingUp className="w-4 h-4 text-[#cba258]" />
+                    <span className="text-[10px] font-mono font-bold">TỶ SUẤT LỢI NHUẬN</span>
                   </div>
-                  <p className="text-lg font-black text-emerald-400">
+                  <p className="text-xl font-bold text-emerald-600">
                     +{Math.round((currentStats.monthlyNetProfit / currentStats.monthlyRevenue) * 100)}%
                   </p>
-                  <p className="text-[9px] text-slate-500 font-mono">Net Profit: ~{Math.round(currentStats.monthlyNetProfit / 1000000)}M/mo</p>
+                  <p className="text-[9px] text-slate-400 font-mono">LN ròng: ~{Math.round(currentStats.monthlyNetProfit / 1000000)}Tr/tháng</p>
                 </div>
               </div>
             </div>
 
             {/* Visual Callout block */}
-            <div className="p-5 rounded-2xl bg-indigo-950/20 border border-indigo-500/20 space-y-2">
+            <div className="p-5 rounded-2xl bg-[#d4e9e2]/30 border border-[#00754A]/20 space-y-2">
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-indigo-400" />
-                <h4 className="text-sm font-bold text-white">Break-Even Velocity</h4>
+                <Calendar className="w-5 h-5 text-[#00754A]" />
+                <h4 className="text-sm font-bold text-slate-800">Tiến Độ Hòa Vốn</h4>
               </div>
-              <p className="text-xs text-slate-400 font-light leading-relaxed">
-                Under <span className="text-white font-semibold">{loadTier} Load</span> parameters, the hub breaks even and achieves pure net positive yields within exactly <span className="text-amber-400 font-extrabold text-sm">{currentStats.breakevenMonths} Months</span> of launch operations.
+              <p className="text-xs text-slate-650 font-light leading-relaxed">
+                Với mức vận hành <span className="text-[#006241] font-bold">Quy mô {loadTier === "Low" ? "Nhỏ" : loadTier === "Medium" ? "Vừa" : "Tối đa"}</span>, dự án sẽ đạt điểm hòa vốn và bắt đầu sinh dòng tiền thuần dương sau đúng <span className="text-[#006241] font-bold text-sm bg-white px-2 py-0.5 rounded-full border border-[#edebe9]">{currentStats.breakevenMonths} Tháng</span> kể từ ngày vận hành trạm ngủ.
               </p>
             </div>
 
           </div>
 
           {/* Graph Side (Right - 7 cols) */}
-          <div className="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between min-h-[380px]">
+          <div className="lg:col-span-7 bg-white border border-[#edebe9] rounded-3xl p-6 flex flex-col justify-between min-h-[380px] shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <div className="text-left">
-                <span className="text-xs font-semibold tracking-wider text-slate-400 uppercase font-mono">
-                  Cumulative Yield Trend Curve
+                <span className="text-xs font-bold tracking-wider text-slate-500 uppercase font-mono">
+                  Biểu Đồ Lợi Nhuận Tích Lũy
                 </span>
-                <p className="text-sm font-bold text-slate-200">Cash Flow Timeline (Millions VND)</p>
+                <p className="text-sm font-bold text-slate-800">Tiến trình dòng tiền (Triệu VND)</p>
               </div>
 
-              <div className="flex items-center gap-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-[10px] text-slate-400 font-mono">
-                <BarChart3 className="w-3.5 h-3.5 text-blue-400" />
-                <span>DYNAMIC PROJECTION MODEL</span>
+              <div className="flex items-center gap-1 bg-[#f9f8f6] border border-[#edebe9] rounded-full px-3 py-1.5 text-[10px] text-slate-500 font-mono">
+                <BarChart3 className="w-3.5 h-3.5 text-[#00754A]" />
+                <span>MÔ HÌNH DỰ PHÒNG DÒNG TIỀN</span>
               </div>
             </div>
 
@@ -205,35 +202,36 @@ export default function FinancialsBoard() {
                   >
                     <defs>
                       <linearGradient id="colorCash" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#6366F1" stopOpacity={0.4}/>
-                        <stop offset="95%" stopColor="#6366F1" stopOpacity={0.0}/>
+                        <stop offset="5%" stopColor="#00754A" stopOpacity={0.25}/>
+                        <stop offset="95%" stopColor="#00754A" stopOpacity={0.0}/>
                       </linearGradient>
                     </defs>
-                    <CartesianGrid stroke="#1E293B" strokeDasharray="3 3" />
+                    <CartesianGrid stroke="#edebe9" strokeDasharray="3 3" />
                     <XAxis
                       dataKey="month"
-                      stroke="#475569"
-                      style={{ fontSize: 10, fontFamily: "monospace" }}
+                      stroke="#888888"
+                      style={{ fontSize: 10, fontFamily: "sans-serif" }}
                     />
                     <YAxis
-                      stroke="#475569"
-                      style={{ fontSize: 10, fontFamily: "monospace" }}
+                      stroke="#888888"
+                      style={{ fontSize: 10, fontFamily: "sans-serif" }}
                     />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: "#0F172A",
-                        border: "1px solid #334155",
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #edebe9",
                         borderRadius: "12px",
-                        color: "#F1F5F9",
-                        fontFamily: "monospace",
-                        fontSize: 11
+                        color: "#333333",
+                        fontFamily: "sans-serif",
+                        fontSize: 11,
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
                       }}
-                      formatter={(value) => [`${value.toLocaleString()}M VND`, "Net Yield"]}
+                      formatter={(value) => [`${value.toLocaleString()} Tr VND`, "Dòng tiền tích lũy"]}
                     />
                     <Area
                       type="monotone"
                       dataKey="VND"
-                      stroke="#6366F1"
+                      stroke="#00754A"
                       strokeWidth={2.5}
                       fillOpacity={1}
                       fill="url(#colorCash)"
@@ -241,16 +239,16 @@ export default function FinancialsBoard() {
                   </AreaChart>
                 </ResponsiveContainer>
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
-                  Loading interactive model graphics...
+                <div className="w-full h-full flex items-center justify-center text-slate-400 font-mono text-xs">
+                  Đang tải biểu đồ giả lập tài chính...
                 </div>
               )}
             </div>
 
             {/* Axis explanation tags */}
-            <div className="flex justify-between items-center text-[10px] text-slate-500 font-mono pt-4 border-t border-slate-800/80 mt-4">
-              <span>X-AXIS: Operational months (0 to 36)</span>
-              <span>Y-AXIS: Cumulative cash flows (Millions VND)</span>
+            <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono pt-4 border-t border-[#edebe9] mt-4">
+              <span>Trục hoành X: Các tháng vận hành (0 đến 36)</span>
+              <span>Trục tung Y: Dòng tiền thuần lũy kế (Triệu VND)</span>
             </div>
 
           </div>
