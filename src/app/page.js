@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/components/Hero";
 import BookingGrid from "@/components/BookingGrid";
 import Showcase from "@/components/Showcase";
+import Team from "@/components/Team";
 import PodSimulator from "@/components/PodSimulator";
 import CompetitorMatrix from "@/components/CompetitorMatrix";
 import FinancialsBoard from "@/components/FinancialsBoard";
@@ -14,21 +15,21 @@ export default function Home() {
   const { activeSession } = useBooking();
 
   return (
-    <main className="w-full bg-slate-950 min-h-screen">
+    <main className="w-full bg-[#0a110e] min-h-screen">
       {/* 
         Strict PC Layout Wrapper bounding content safely between 1280px and 1920px width brackets. 
         Centered, with overflow protection.
       */}
-      <div className="max-w-[1920px] min-w-[1280px] mx-auto bg-slate-950 overflow-hidden relative shadow-2xl border-l border-r border-slate-900">
+      <div className="max-w-[1920px] min-w-[1280px] mx-auto bg-[#0a110e] overflow-hidden relative shadow-2xl border-l border-r border-slate-900/60">
         
         {/* PREMIUM FIXED TOP NAVIGATION */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900/60 max-w-[1920px] min-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a110e]/80 backdrop-blur-md border-b border-slate-900/40 max-w-[1920px] min-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <div className="w-9 h-9 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <Moon className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 bg-gradient-to-r from-[#00704A] to-[#006241] rounded-xl flex items-center justify-center shadow-lg shadow-emerald-950/20">
+              <Moon className="w-5 h-5 text-[#f4f2eb]" />
             </div>
-            <span className="text-lg font-black tracking-tight text-white">
-              Nap<span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Nest</span>
+            <span className="text-lg font-black tracking-tight text-[#f4f2eb]">
+              Nap<span className="bg-gradient-to-r from-emerald-400 to-[#cba258] bg-clip-text text-transparent">Nest</span>
             </span>
           </div>
 
@@ -43,9 +44,16 @@ export default function Home() {
             
             <button
               onClick={() => document.getElementById("showcase-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="hover:text-blue-400 transition-colors cursor-pointer"
+              className="hover:text-emerald-400 transition-colors cursor-pointer"
             >
               Cabin Showcase
+            </button>
+
+            <button
+              onClick={() => document.getElementById("team-section")?.scrollIntoView({ behavior: "smooth" })}
+              className="hover:text-emerald-400 transition-colors cursor-pointer"
+            >
+              Founding Team
             </button>
             
             {activeSession && (
@@ -60,14 +68,14 @@ export default function Home() {
 
             <button
               onClick={() => document.getElementById("matrix-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="hover:text-blue-400 transition-colors cursor-pointer"
+              className="hover:text-emerald-400 transition-colors cursor-pointer"
             >
               Tech Features
             </button>
 
             <button
               onClick={() => document.getElementById("investor-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="hover:text-blue-400 transition-colors cursor-pointer"
+              className="hover:text-emerald-400 transition-colors cursor-pointer"
             >
               Investor Pitch
             </button>
@@ -93,6 +101,9 @@ export default function Home() {
 
         {/* COZY OAK SHOWCASE IMAGES CONTAINER */}
         <Showcase />
+
+        {/* TEAM PIONEERS CONTAINER */}
+        <Team />
 
         {/* IN-POD SIMULATION CONSOLE CONTAINER */}
         <PodSimulator />

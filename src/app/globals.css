@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #0a110e; /* Deep Starbucks Forest Black */
+  --foreground: #f4f2eb; /* Cozy Warm Cream */
+  --starbucks-green: #00704A;
+  --starbucks-dark-green: #1e3932;
+  --starbucks-gold: #cba258;
 }
 
 @theme inline {
@@ -16,8 +19,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #020617;
-  color: #f8fafc;
+  background-color: #0a110e;
+  color: #f4f2eb;
   font-family: var(--font-sans);
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -30,13 +33,13 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #3b82f6;
+  background: #00704a; /* Starbucks Green */
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 10px rgba(0, 112, 74, 0.5);
   transition: all 0.2s;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #60a5fa;
+  background: #008f5d;
   transform: scale(1.1);
 }

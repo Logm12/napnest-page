@@ -110,7 +110,7 @@ export default function BookingGrid() {
                     cardStyle = "border-purple-900/30 bg-purple-950/10 cursor-not-allowed opacity-65";
                     statusGlow = "bg-purple-500/20 text-purple-400 border-purple-500/30";
                   } else if (isSelected) {
-                    cardStyle = "border-blue-500 bg-blue-950/30 ring-2 ring-blue-500/30 cursor-pointer";
+                    cardStyle = "border-emerald-500 bg-emerald-950/20 ring-2 ring-emerald-500/20 cursor-pointer";
                   }
 
                   return (
@@ -178,7 +178,7 @@ export default function BookingGrid() {
                   </span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20 space-y-1">
+                 <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20 space-y-1">
                   <p className="text-xs text-slate-400 font-mono">SELECTED POD</p>
                   <p className="text-base font-semibold text-white">{selectedPod.name}</p>
                   <p className="text-[10px] text-slate-400">Current Status: <span className="text-emerald-400">Available</span></p>
@@ -188,7 +188,7 @@ export default function BookingGrid() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-slate-300 font-medium">Duration Hours</span>
-                    <span className="text-base font-extrabold text-blue-400">{bookingHours} Hours</span>
+                    <span className="text-base font-extrabold text-emerald-400">{bookingHours} Hours</span>
                   </div>
 
                   <input
@@ -198,7 +198,7 @@ export default function BookingGrid() {
                     step="1"
                     value={bookingHours}
                     onChange={(e) => setBookingHours(parseInt(e.target.value))}
-                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                   />
                   <div className="flex justify-between text-[10px] text-slate-500 font-mono">
                     <span>2h (Base)</span>
@@ -233,7 +233,7 @@ export default function BookingGrid() {
                 {/* Checkout CTA */}
                 <button
                   onClick={handleCheckout}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-[#00704A] hover:from-emerald-700 hover:to-[#006241] text-white font-semibold py-4 px-6 rounded-xl shadow-lg shadow-emerald-950/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   Confirm Mock Payment &amp; Unlock Pod
                 </button>
