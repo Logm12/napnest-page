@@ -22,7 +22,7 @@ export default function FinancialsBoard() {
       monthlyNetProfit: (16 * 84000 * 30) - 18000000,
       breakevenMonths: 34,
       initialCapex: 750000000,
-      desc: "Mô hình quy mô nhỏ lắp đặt tại các văn phòng nhỏ hoặc quán cà phê vệ tinh."
+      desc: "Small localized installation. Simulates corporate offices or satellite cafes."
     },
     Medium: {
       units: 32,
@@ -33,7 +33,7 @@ export default function FinancialsBoard() {
       monthlyNetProfit: (32 * 84000 * 30) - 28000000,
       breakevenMonths: 26,
       initialCapex: 1350000000,
-      desc: "Quy mô trung bình thích hợp cho không gian co-working, đại học hoặc ga tàu."
+      desc: "Medium volume. Simulates co-working spaces, colleges, or transit terminals."
     },
     Full: {
       units: 48,
@@ -44,7 +44,7 @@ export default function FinancialsBoard() {
       monthlyNetProfit: (48 * 99000 * 30) - 38000000,
       breakevenMonths: 19,
       initialCapex: 1950000000,
-      desc: "Công suất tối đa lắp đặt tại các sảnh sân bay, bệnh viện hoặc khu vực 24/7."
+      desc: "Maximum volume. Simulates airport lounges, hospitals, or 24/7 high-density zones."
     }
   };
 
@@ -59,7 +59,7 @@ export default function FinancialsBoard() {
     for (let m = 0; m <= months; m += 3) {
       const netCashFlow = -initialCapex + (m * monthlyProfit);
       data.push({
-        month: `Tháng ${m}`,
+        month: `M${m}`,
         VND: Math.round(netCashFlow / 1000000),
       });
     }
@@ -80,13 +80,13 @@ export default function FinancialsBoard() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <Landmark className="w-3.5 h-3.5" />
-            <span>KẾ HOẠCH TÀI CHÍNH</span>
+            <span>FINANCIAL PITCH BOARD</span>
           </div>
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
-            Hiệu Suất Đầu Tư &amp; Điểm Hòa Vốn
+            Investor Projections &amp; Break-Even Velocity
           </h2>
-          <p className="text-slate-600 font-light">
-            Bảng tính giả lập dòng tiền tích lũy và thời gian hoàn vốn thực tế của dự án NapNest dưới các mức công suất vận hành khác nhau.
+          <p className="text-slate-650 font-light">
+            Interactive modeling engine projecting cumulative cash flows and break-even timelines of NapNest hubs under various capacity scaling benchmarks.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function FinancialsBoard() {
               {/* Capacity Multi-Stage Selectors */}
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-wider text-slate-500 uppercase font-mono">
-                  Chọn Quy Mô Vận Hành Trạm ngủ
+                  Select Hub Operational Capacity
                 </span>
                 
                 <div className="flex flex-col gap-3">
@@ -123,13 +123,13 @@ export default function FinancialsBoard() {
                             {isSelected && <CheckSquare className="w-3 h-3" />}
                           </div>
                           <div>
-                            <p className="text-sm font-bold text-slate-800">Quy mô {tier === "Low" ? "Nhỏ" : tier === "Medium" ? "Vừa" : "Tối đa"}</p>
-                            <p className="text-xs text-slate-500 mt-0.5 font-light leading-snug">{stats.desc}</p>
+                            <p className="text-sm font-bold text-slate-800">{tier} Load Capacity</p>
+                            <p className="text-xs text-slate-550 mt-0.5 font-light leading-snug">{stats.desc}</p>
                           </div>
                         </div>
                         <div className="text-right shrink-0 ml-4">
-                          <p className="text-sm font-bold text-[#00754A]">{stats.units} Cabin</p>
-                          <p className="text-[10px] text-slate-400 font-mono mt-0.5">lượt nghỉ / ngày</p>
+                          <p className="text-sm font-bold text-[#00754A]">{stats.units} Pods</p>
+                          <p className="text-[10px] text-slate-400 font-mono mt-0.5">daily usages</p>
                         </div>
                       </button>
                     );
@@ -142,23 +142,23 @@ export default function FinancialsBoard() {
                 <div className="bg-white border border-[#edebe9] rounded-2xl p-4 space-y-1 shadow-sm">
                   <div className="flex items-center gap-1.5 text-slate-500">
                     <DollarSign className="w-4 h-4 text-[#00754A]" />
-                    <span className="text-[10px] font-mono font-bold">DOANH THU THÁNG</span>
+                    <span className="text-[10px] font-mono font-bold">EST. MONTHLY REVENUE</span>
                   </div>
                   <p className="text-xl font-bold text-slate-800">
-                    {Math.round(currentStats.monthlyRevenue / 1000000)}Tr VND
+                    {Math.round(currentStats.monthlyRevenue / 1000000)}M VND
                   </p>
-                  <p className="text-[9px] text-slate-400 font-mono">Tính trên vé trung bình {currentStats.averageTicket === 84000 ? "84.000" : "99.000"}đ</p>
+                  <p className="text-[9px] text-slate-400 font-mono">Based on ~{currentStats.averageTicket === 84000 ? "84,000" : "99,000"}đ average</p>
                 </div>
 
                 <div className="bg-white border border-[#edebe9] rounded-2xl p-4 space-y-1 shadow-sm">
                   <div className="flex items-center gap-1.5 text-slate-500">
                     <TrendingUp className="w-4 h-4 text-[#cba258]" />
-                    <span className="text-[10px] font-mono font-bold">TỶ SUẤT LỢI NHUẬN</span>
+                    <span className="text-[10px] font-mono font-bold">EST. NET MARGIN</span>
                   </div>
                   <p className="text-xl font-bold text-emerald-600">
                     +{Math.round((currentStats.monthlyNetProfit / currentStats.monthlyRevenue) * 100)}%
                   </p>
-                  <p className="text-[9px] text-slate-400 font-mono">LN ròng: ~{Math.round(currentStats.monthlyNetProfit / 1000000)}Tr/tháng</p>
+                  <p className="text-[9px] text-slate-400 font-mono">Net profit: ~{Math.round(currentStats.monthlyNetProfit / 1000000)}M/mo</p>
                 </div>
               </div>
             </div>
@@ -167,10 +167,10 @@ export default function FinancialsBoard() {
             <div className="p-5 rounded-2xl bg-[#d4e9e2]/30 border border-[#00754A]/20 space-y-2">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-[#00754A]" />
-                <h4 className="text-sm font-bold text-slate-800">Tiến Độ Hòa Vốn</h4>
+                <h4 className="text-sm font-bold text-slate-800">Break-Even Velocity</h4>
               </div>
               <p className="text-xs text-slate-650 font-light leading-relaxed">
-                Với mức vận hành <span className="text-[#006241] font-bold">Quy mô {loadTier === "Low" ? "Nhỏ" : loadTier === "Medium" ? "Vừa" : "Tối đa"}</span>, dự án sẽ đạt điểm hòa vốn và bắt đầu sinh dòng tiền thuần dương sau đúng <span className="text-[#006241] font-bold text-sm bg-white px-2 py-0.5 rounded-full border border-[#edebe9]">{currentStats.breakevenMonths} Tháng</span> kể từ ngày vận hành trạm ngủ.
+                Under <span className="text-[#006241] font-bold">{loadTier} Load</span> parameters, the hub breaks even and achieves pure net positive yields within exactly <span className="text-[#006241] font-bold text-sm bg-white px-2 py-0.5 rounded-full border border-[#edebe9]">{currentStats.breakevenMonths} Months</span> of launch operations.
               </p>
             </div>
 
@@ -181,14 +181,14 @@ export default function FinancialsBoard() {
             <div className="flex justify-between items-center mb-6">
               <div className="text-left">
                 <span className="text-xs font-bold tracking-wider text-slate-500 uppercase font-mono">
-                  Biểu Đồ Lợi Nhuận Tích Lũy
+                  Cumulative Net Yield Trend Curve
                 </span>
-                <p className="text-sm font-bold text-slate-800">Tiến trình dòng tiền (Triệu VND)</p>
+                <p className="text-sm font-bold text-slate-800">Cash Flow Timeline (Millions VND)</p>
               </div>
 
               <div className="flex items-center gap-1 bg-[#f9f8f6] border border-[#edebe9] rounded-full px-3 py-1.5 text-[10px] text-slate-500 font-mono">
                 <BarChart3 className="w-3.5 h-3.5 text-[#00754A]" />
-                <span>MÔ HÌNH DỰ PHÒNG DÒNG TIỀN</span>
+                <span>DYNAMIC PROJECTION MODEL</span>
               </div>
             </div>
 
@@ -226,7 +226,7 @@ export default function FinancialsBoard() {
                         fontSize: 11,
                         boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
                       }}
-                      formatter={(value) => [`${value.toLocaleString()} Tr VND`, "Dòng tiền tích lũy"]}
+                      formatter={(value) => [`${value.toLocaleString()} M VND`, "Net Yield"]}
                     />
                     <Area
                       type="monotone"
@@ -240,15 +240,15 @@ export default function FinancialsBoard() {
                 </ResponsiveContainer>
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-slate-400 font-mono text-xs">
-                  Đang tải biểu đồ giả lập tài chính...
+                  Loading interactive model graphics...
                 </div>
               )}
             </div>
 
             {/* Axis explanation tags */}
             <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono pt-4 border-t border-[#edebe9] mt-4">
-              <span>Trục hoành X: Các tháng vận hành (0 đến 36)</span>
-              <span>Trục tung Y: Dòng tiền thuần lũy kế (Triệu VND)</span>
+              <span>X-AXIS: Operational months (0 to 36)</span>
+              <span>Y-AXIS: Cumulative cash flows (Millions VND)</span>
             </div>
 
           </div>

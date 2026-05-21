@@ -7,27 +7,27 @@ export default function Hero() {
   const materials = [
     {
       id: "oak",
-      name: "Gỗ Sồi Nhật (Light Oak)",
+      name: "Japanese Light Oak",
       img: "/images/showcase-1.jpg",
-      desc: "Khung sồi đỏ Nhật Bản gia cố chịu lực cao, vân gỗ sáng sang trọng."
+      desc: "Premium Japanese red-core MDF with reinforced oak structural framing."
     },
     {
       id: "interior",
       name: "Ambient Warmth",
       img: "/images/showcase-2.jpg",
-      desc: "Nội thất bọc nỉ cách âm tiêu âm cao cấp kèm dải LED sinh học."
+      desc: "Acoustic fabric interior walls and bio-circadian warm LED ceiling strip."
     },
     {
       id: "linen",
       name: "Organic Linen",
       img: "/images/showcase-3.jpg",
-      desc: "Đệm Memory Foam phục hồi và chăn ga vải lanh hữu cơ mềm mại."
+      desc: "Pressure-relieving memory foam mattress and 100% organic linen sheets."
     },
     {
       id: "aisle",
       name: "Aisle Hub Grid",
       img: "/images/showcase-4.jpg",
-      desc: "Thiết kế cabin kép đối xứng tối ưu hóa diện tích cho sảnh chờ."
+      desc: "Symmetric double-decker cabin hub optimizing footprint for transit corridors."
     }
   ];
 
@@ -49,7 +49,7 @@ export default function Hero() {
           <div className="lg:col-span-7 space-y-8 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>DỰ ÁN TRẠM NGỦ THÔNG MINH - MOBILE NAP HUB</span>
+              <span>MOBILE NAP HUB - SMART SLEEP INITIATIVE</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-none text-[#006241] font-serif">
@@ -60,7 +60,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base text-slate-700 max-w-xl font-normal leading-relaxed">
-              Mô hình trạm ngủ di động NapNest cung cấp không gian nghỉ ngơi yên tĩnh, sạch sẽ và tiện lợi tại Hà Nội cho sinh viên và giới văn phòng (đặc biệt từ 18-25 tuổi có thu nhập khiêm tốn). Nghỉ ngơi ngắn từ 30-60 phút để tái tạo năng lượng tối đa!
+              The NapNest mobile nap hub provides quiet, clean, and cozy private resting modules in Hanoi for young professionals and students (focusing on ages 18-25). Supercharge your day with a quick 30-60 min rest!
             </p>
 
             {/* Quick Selling Props */}
@@ -70,8 +70,8 @@ export default function Hero() {
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] text-slate-500 font-mono">CÁCH ÂM</p>
-                  <p className="text-xs font-bold text-[#1E3932]">-35dB Cách Âm</p>
+                  <p className="text-[10px] text-slate-500 font-mono">ACOUSTIC SHIELD</p>
+                  <p className="text-xs font-bold text-[#1E3932]">-35dB Isolation</p>
                 </div>
               </div>
 
@@ -80,8 +80,8 @@ export default function Hero() {
                   <Zap className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] text-slate-500 font-mono">KHỬ KHUẨN</p>
-                  <p className="text-xs font-bold text-[#1E3932]">UV-C 60s Purge</p>
+                  <p className="text-[10px] text-slate-500 font-mono">SANITIZATION</p>
+                  <p className="text-xs font-bold text-[#1E3932]">60s UV-C Cycle</p>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ export default function Hero() {
                   <HelpCircle className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] text-slate-500 font-mono">KHÔNG KHÍ</p>
+                  <p className="text-[10px] text-slate-500 font-mono">CLIMATE CONTROL</p>
                   <p className="text-xs font-bold text-[#1E3932]">HEPA Airflow</p>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function Hero() {
                 onClick={scrollToBooking}
                 className="group inline-flex items-center gap-2 bg-[#00754A] hover:bg-[#006241] text-white font-bold px-8 py-3.5 rounded-full shadow-md active:scale-95 transition-all duration-200 cursor-pointer"
               >
-                Đặt cabin ngủ ngay
+                Book Your Cabin Now
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
 
@@ -113,7 +113,7 @@ export default function Hero() {
                 }}
                 className="inline-flex items-center justify-center border-2 border-[#00754A] text-[#00754A] hover:bg-[#edebe9]/40 font-bold px-6 py-3.5 rounded-full active:scale-95 transition-all duration-200 cursor-pointer"
               >
-                Tìm địa điểm trạm
+                Find Nearest Hub
               </button>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Hero() {
 
               {/* Dynamic Description Box */}
               <div className="mt-4 text-left p-3 bg-[#f9f8f6] rounded-2xl border border-[#edebe9]">
-                <h4 className="text-xs font-bold text-[#006241] font-mono">CHẤT LIỆU HIỆN TẠI</h4>
+                <h4 className="text-xs font-bold text-[#006241] font-mono">CURRENT SELECTION</h4>
                 <p className="text-sm font-semibold text-[#1E3932] mt-1">{activeMaterial.name}</p>
                 <p className="text-xs text-slate-500 font-light mt-0.5">{activeMaterial.desc}</p>
               </div>
@@ -155,7 +155,7 @@ export default function Hero() {
                       : "bg-white text-slate-600 border-[#edebe9] hover:border-slate-300"
                   }`}
                 >
-                  {mat.name.split(" ")[0]}
+                  {mat.name}
                 </button>
               ))}
             </div>

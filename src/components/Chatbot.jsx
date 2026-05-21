@@ -8,7 +8,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Xin chào! Mình là trợ lý AI 24/7 của NapNest. Mình có thể giúp gì cho bạn hôm nay? (Bảng giá, địa điểm hoặc hướng dẫn đặt trạm ngủ gỗ sồi ấm áp...)"
+      content: "Hello! I am your 24/7 NapNest AI Assistant. How can I help you today? (Ask about pricing, location, or how to book a cozy oak sleep cabin...)"
     }
   ]);
   const [input, setInput] = useState("");
@@ -17,10 +17,10 @@ export default function Chatbot() {
   const messagesEndRef = useRef(null);
 
   const suggestions = [
-    "Bảng giá thuê cabin?",
-    "Địa chỉ trạm ngủ ở đâu?",
-    "Làm sao để đặt phòng?",
-    "Các tiện ích nổi bật?"
+    "Hourly rates?",
+    "Where is the hub?",
+    "How to book a pod?",
+    "Highlight features?"
   ];
 
   const scrollToBottom = () => {
@@ -53,14 +53,14 @@ export default function Chatbot() {
       if (!response.ok) throw new Error("API Network error");
       
       const data = await response.json();
-      const assistantReply = data.choices?.[0]?.message?.content || "Dạ, hệ thống đang bận một chút, bạn thử lại sau nhé!";
+      const assistantReply = data.choices?.[0]?.message?.content || "Sorry, the network is a bit busy. Please try again in a moment!";
       
       setMessages(prev => [...prev, { role: "assistant", content: assistantReply }]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, {
         role: "assistant",
-        content: "Dạ, hiện tại kết nối có chút gián đoạn. Bạn cần hỏi gì về bảng giá (69k/2h) hoặc địa điểm tại 144 Xuân Thủy ạ?"
+        content: "Sorry, I'm experiencing some connectivity issues. Do you have questions about our rates (69k/2h) or Xuan Thuy location?"
       }]);
     } finally {
       setIsLoading(false);
@@ -83,7 +83,7 @@ export default function Chatbot() {
           </span>
           {/* Tooltip */}
           <div className="absolute right-16 bg-[#1E3932] text-white text-xs py-1.5 px-3 rounded-xl shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap font-medium border border-emerald-800">
-            Hỗ trợ AI 24/7
+            24/7 AI Chat Help
           </div>
         </button>
       )}
@@ -100,8 +100,8 @@ export default function Chatbot() {
                 <img src="/images/logo.png" alt="NapNest Logo" className="w-7 h-7 rounded-full object-contain bg-white" />
               </div>
               <div className="text-left">
-                <h4 className="text-sm font-bold tracking-tight">Trợ lý Trạm ngủ NapNest</h4>
-                <p className="text-[10px] text-emerald-400 font-mono">Tự động phản hồi 24/7</p>
+                <h4 className="text-sm font-bold tracking-tight">NapNest AI Assistant</h4>
+                <p className="text-[10px] text-emerald-400 font-mono">24/7 Auto Responder</p>
               </div>
             </div>
             <button
@@ -136,7 +136,7 @@ export default function Chatbot() {
               <div className="flex justify-start">
                 <div className="bg-white text-slate-500 border border-[#edebe9] rounded-2xl rounded-bl-none p-3 shadow-sm flex items-center gap-2">
                   <Loader2 className="w-3.5 h-3.5 animate-spin text-[#00754A]" />
-                  <span className="text-[10px] font-mono">NapNest đang suy nghĩ...</span>
+                  <span className="text-[10px] font-mono">NapNest is typing...</span>
                 </div>
               </div>
             )}
@@ -170,7 +170,7 @@ export default function Chatbot() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Hỏi NapNest điều gì đó..."
+              placeholder="Ask NapNest anything..."
               className="flex-1 bg-[#f9f8f6] border border-[#edebe9] rounded-full px-4 py-2 text-xs outline-none focus:border-[#00754A] transition-colors text-slate-800"
               disabled={isLoading}
             />

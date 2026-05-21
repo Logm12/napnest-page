@@ -6,38 +6,38 @@ import { Check, X, ShieldAlert, Sparkles, Trophy } from "lucide-react";
 export default function CompetitorMatrix() {
   const comparisonData = [
     {
-      feature: "Chất liệu & An toàn chống cháy",
-      napnest: "Khung gỗ sồi composite Red-Core Class-A chống cháy chuẩn y tế",
-      cafe: "Vách ngăn gỗ dán thông thường (Nguy cơ cháy cao)",
-      office: "Bàn làm việc mở hoặc vách ngăn vải (Không bảo vệ)",
+      feature: "Fireproofing & Shell Material",
+      napnest: "Class-A Red-Core fireproof oak wood composite (Medical-grade)",
+      cafe: "Basic thin plywood panels (High safety risk)",
+      office: "Open office desks or fabric dividers (Zero protection)",
       highlight: true
     },
     {
-      feature: "Khả năng cách âm riêng tư",
-      napnest: "Hộp vỏ kép cách âm tiêu âm chuyên sâu giảm tới -35dB",
-      cafe: "Rèm che hoặc vách thạch cao mỏng (Giảm ồn kém -5dB)",
-      office: "Không có - Thường xuyên bị gián đoạn âm thanh (0dB)",
+      feature: "Sound Dampening & Noise Control",
+      napnest: "Dual-layer shell & professional acoustic foam (Dampens -35dB)",
+      cafe: "Curtain flaps or single-layer drywalls (Dampens -5dB)",
+      office: "None - open space with constant noise interruptions (0dB)",
       highlight: true
     },
     {
-      feature: "Vệ sinh & Khử khuẩn",
-      napnest: "Hệ thống khử khuẩn UV-C tự động 60s sau mỗi phiên nghỉ",
-      cafe: "Lau dọn thủ công không định kỳ",
-      office: "Lao công dọn dẹp định kỳ cuối ngày",
+      feature: "Sanitization & Sterilization",
+      napnest: "Clinical 60s automated UV-C sterilization cycle after each rest",
+      cafe: "Irregular manual disinfectant spray wipes",
+      office: "Standard office cleaning sweeps (once daily)",
       highlight: true
     },
     {
-      feature: "Lọc khí & Điều hòa",
-      napnest: "Hệ thống gió sạch độc lập màng lọc HEPA-13",
-      cafe: "Dùng chung điều hòa tổng tòa nhà",
-      office: "Điều hòa tổng không có lọc khí chuyên dụng",
+      feature: "Climate & Air Filtration",
+      napnest: "Active HEPA-13 airflow filtration system",
+      cafe: "Shared building central AC",
+      office: "Standard office central duct (Unfiltered)",
       highlight: false
     },
     {
-      feature: "Ánh sáng sinh học",
-      napnest: "Đèn LED mô phỏng chu kỳ giấc ngủ tự nhiên",
-      cafe: "Đèn tuýp huỳnh quang hoặc bóng tối mờ mắt",
-      office: "Ánh sáng đèn huỳnh quang văn phòng gay gắt",
+      feature: "Circadian Ambient Lighting",
+      napnest: "Color spectrum LEDs mimicking circadian phases",
+      cafe: "Dim ambient room or generic lamps",
+      office: "Harsh commercial fluorescent white panels",
       highlight: false
     }
   ];
@@ -50,13 +50,13 @@ export default function CompetitorMatrix() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <Trophy className="w-3.5 h-3.5" />
-            <span>SO SÁNH TÍNH NĂNG</span>
+            <span>COMPETITIVE COMPARISON</span>
           </div>
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
-            Điểm Khác Biệt Của NapNest
+            Why Choose NapNest?
           </h2>
           <p className="text-slate-650 font-light">
-            Chúng tôi đối chiếu các thông số kỹ thuật của cabin NapNest với các phương án nghỉ ngơi truyền thống.
+            A side-by-side technical comparison of our premium sleep modules against standard resting options.
           </p>
         </div>
 
@@ -67,13 +67,13 @@ export default function CompetitorMatrix() {
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-[#f9f8f6] border-b border-[#edebe9] text-xs font-mono text-slate-500 uppercase">
-                  <th className="py-5 px-6 font-bold">Thông số / Tiện ích</th>
+                  <th className="py-5 px-6 font-bold">Safety &amp; Comfort Parameters</th>
                   <th className="py-5 px-6 font-bold text-[#006241] flex items-center gap-1.5">
                     <Sparkles className="w-4 h-4 text-[#cba258] animate-pulse" />
-                    Cabin NapNest
+                    NapNest Pod Module
                   </th>
-                  <th className="py-5 px-6 font-bold">Cà phê ngủ trưa</th>
-                  <th className="py-5 px-6 font-bold">Ngủ tại bàn văn phòng</th>
+                  <th className="py-5 px-6 font-bold">Traditional Nap Cafes</th>
+                  <th className="py-5 px-6 font-bold">Standard Office Desk</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#edebe9] text-sm text-slate-700">
@@ -85,12 +85,12 @@ export default function CompetitorMatrix() {
                     }`}
                   >
                     {/* Feature Label */}
-                    <td className="py-5 px-6 font-bold text-slate-800">
+                    <td className="py-5 px-6 font-bold text-slate-800 text-left">
                       {row.feature}
                     </td>
 
                     {/* NapNest Score */}
-                    <td className="py-5 px-6 font-semibold text-[#006241] bg-[#d4e9e2]/10 border-l border-r border-[#edebe9]/60">
+                    <td className="py-5 px-6 font-semibold text-[#006241] bg-[#d4e9e2]/10 border-l border-r border-[#edebe9]/60 text-left">
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 bg-[#d4e9e2] text-[#00754A] border border-emerald-300 rounded-full flex items-center justify-center shrink-0">
                           <Check className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export default function CompetitorMatrix() {
                     </td>
 
                     {/* Cafe Score */}
-                    <td className="py-5 px-6 text-slate-500 font-light">
+                    <td className="py-5 px-6 text-slate-500 font-light text-left">
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 bg-red-50 text-red-500 border border-red-150 rounded-full flex items-center justify-center shrink-0">
                           <X className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export default function CompetitorMatrix() {
                     </td>
 
                     {/* Office Score */}
-                    <td className="py-5 px-6 text-slate-500 font-light">
+                    <td className="py-5 px-6 text-slate-500 font-light text-left">
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 bg-red-50 text-red-500 border border-red-150 rounded-full flex items-center justify-center shrink-0">
                           <X className="w-3.5 h-3.5" />
@@ -125,9 +125,9 @@ export default function CompetitorMatrix() {
           </div>
 
           {/* Matrix Footer Note */}
-          <div className="bg-[#f9f8f6] p-5 border-t border-[#edebe9] flex items-center gap-2 text-xs text-slate-500 font-mono">
+          <div className="bg-[#f9f8f6] p-5 border-t border-[#edebe9] flex items-center gap-2 text-xs text-slate-500 font-mono text-left">
             <ShieldAlert className="w-4 h-4 text-[#00754A] shrink-0" />
-            <span>Mọi linh kiện cấu thành trạm ngủ NapNest đều tuân thủ các chỉ chuẩn quốc tế về công thái học và an toàn điện y tế.</span>
+            <span>All structural components are certified under International Safety and Ergonomics Standard Codes.</span>
           </div>
 
         </div>

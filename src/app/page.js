@@ -44,35 +44,35 @@ export default function Home() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Giới thiệu
+              About
             </button>
             
             <button
               onClick={() => document.getElementById("booking-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Sơ đồ đặt cabin
+              Booking Grid
             </button>
             
             <button
               onClick={() => document.getElementById("showcase-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Hình ảnh
+              Showcase
             </button>
 
             <button
               onClick={() => document.getElementById("team-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Đội ngũ
+              Team
             </button>
 
             <button
               onClick={() => document.getElementById("location-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Vị trí trạm
+              Hub Location
             </button>
 
             {activeSession && (
@@ -80,7 +80,7 @@ export default function Home() {
                 onClick={() => document.getElementById("simulator-section")?.scrollIntoView({ behavior: "smooth" })}
                 className="border border-amber-300 bg-amber-50 rounded-full px-4 py-2 hover:bg-amber-100/60 text-amber-800 font-bold cursor-pointer text-xs transition-colors animate-pulse"
               >
-                Cabin của bạn
+                Your Cabin
               </button>
             )}
 
@@ -88,14 +88,14 @@ export default function Home() {
               onClick={() => document.getElementById("matrix-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              So sánh tiện ích
+              Tech Features
             </button>
 
             <button
               onClick={() => document.getElementById("investor-section")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Kế hoạch tài chính
+              Investor Pitch
             </button>
           </nav>
 
@@ -116,7 +116,7 @@ export default function Home() {
               }}
               className="bg-[#1E3932] hover:bg-[#006241] text-white font-bold text-xs px-5 py-2.5 rounded-full active:scale-95 transition-all cursor-pointer shadow-sm"
             >
-              Liên hệ
+              Contact Us
             </button>
           </div>
         </header>
@@ -165,42 +165,42 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-xs text-[#edebe9]/60 leading-relaxed font-light">
-                Hệ thống trạm kén ngủ thông minh di động cách âm và tự động khử trùng UV-C đầu tiên tại Việt Nam. Mang lại giấc ngủ ngắn chất lượng cho cộng đồng sinh viên và văn phòng.
+                First premium, clinical-grade mobile nap hub network in Vietnam. Designed to provide high-quality acoustic silence and clinical-grade UV-C sanitation for students and young working professionals.
               </p>
             </div>
 
             {/* Quick links */}
             <div className="space-y-3">
-              <h4 className="text-sm font-bold text-white font-serif">Liên Kết Nhanh</h4>
+              <h4 className="text-sm font-bold text-white font-serif">Quick Links</h4>
               <ul className="space-y-2 text-[#edebe9]/60 font-light">
-                <li><a href="#" className="hover:text-white transition-colors">Giới thiệu dự án</a></li>
-                <li><a href="#booking-section" className="hover:text-white transition-colors">Sơ đồ đặt cabin</a></li>
-                <li><a href="#showcase-section" className="hover:text-white transition-colors">Hình ảnh thực tế</a></li>
-                <li><a href="#location-section" className="hover:text-white transition-colors">Vị trí cơ sở</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">About Project</a></li>
+                <li><a href="#booking-section" className="hover:text-white transition-colors">Booking Grid</a></li>
+                <li><a href="#showcase-section" className="hover:text-white transition-colors">Cabin Showcase</a></li>
+                <li><a href="#location-section" className="hover:text-white transition-colors">Hub Location</a></li>
               </ul>
             </div>
 
             {/* Safety specifications */}
             <div className="space-y-3">
-              <h4 className="text-sm font-bold text-white font-serif">Tiêu Chuẩn An Toàn</h4>
+              <h4 className="text-sm font-bold text-white font-serif">Safety & Specs</h4>
               <ul className="space-y-2 text-[#edebe9]/60 font-light">
-                <li>Khử khuẩn UV-C lâm sàng 60s</li>
-                <li>Lọc gió tươi HEPA tiêu chuẩn</li>
-                <li>Chống cháy gỗ Composite Class-A</li>
-                <li>Hộp kén tiêu âm cách âm -35dB</li>
+                <li>60s Automatic UV-C Purge</li>
+                <li>Active HEPA-13 Fresh Airflow</li>
+                <li>Class-A Fireproof Composite Wood</li>
+                <li>Acoustic Shielding (-35dB Sound dampening)</li>
               </ul>
             </div>
 
             {/* Contact */}
             <div className="space-y-3">
-              <h4 className="text-sm font-bold text-white font-serif">Liên Hệ Trực Tiếp</h4>
+              <h4 className="text-sm font-bold text-white font-serif">Contact Info</h4>
               <ul className="space-y-2 text-[#edebe9]/60 font-light font-mono text-[11px]">
-                <li>Địa điểm: 144 Xuân Thủy, Cầu Giấy, HN</li>
+                <li>Address: 144 Xuan Thuy, Cau Giay, Hanoi</li>
                 <li>Hotline: 1900-NAPNEST</li>
                 <li>Email: support@napnest.com</li>
-                <li className="flex items-center gap-1 text-emerald-400 font-bold mt-2 font-sans">
+                <li className="flex items-center gap-1 text-emerald-400 font-bold mt-2 font-sans font-normal normal-case">
                   <ShieldCheck className="w-4 h-4 shrink-0" />
-                  Vệ sinh an toàn tuyệt đối
+                  Clinical Grade Cleanliness
                 </li>
               </ul>
             </div>
@@ -208,11 +208,11 @@ export default function Home() {
           </div>
 
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-[#edebe9]/50 font-light text-[11px]">
-            <p className="font-medium text-[#edebe9]/70">Bản Quyền &copy; 2026 NAPNEST GLOBAL INC. Bảo lưu mọi quyền.</p>
+            <p className="font-medium text-[#edebe9]/70">Copyright &copy; 2026 NAPNEST GLOBAL INC. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
-              <a href="#" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
-              <a href="#" className="hover:text-white transition-colors">Tiêu chuẩn vận hành</a>
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Operations</a>
+              <a href="#" className="hover:text-white transition-colors">Safety Standards</a>
             </div>
             <p className="font-mono text-[10px]">VIBECODE KIT v6.0 • BUILD: PRODUCTION READY</p>
           </div>

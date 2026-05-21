@@ -27,10 +27,10 @@ export default function BookingGrid() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
-            Bản Đồ Đặt Cabin Ngủ Trực Tuyến
+            Live Booking Grid Map
           </h2>
-          <p className="text-slate-600 font-light">
-            Hệ thống hiển thị trạng thái cabin thời gian thực. Hãy chọn một cabin trống (màu xanh lá), chọn thời gian nghỉ và tiến hành đặt chỗ.
+          <p className="text-slate-650 font-light">
+            Real-time cabin layout. Please click on any available pod (green), select your desired resting hours, and proceed to book.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function BookingGrid() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] text-slate-500 font-mono">TRẠM NGỦ HIỆN TẠI</p>
+                  <p className="text-[10px] text-slate-500 font-mono">SELECTED STATION</p>
                   <h3 className="text-base font-semibold text-slate-800">{selectedStation.name}</h3>
                 </div>
               </div>
@@ -73,21 +73,21 @@ export default function BookingGrid() {
             {/* Grid Map Wrapper */}
             <div className="bg-white border border-[#edebe9] rounded-3xl p-6 relative overflow-hidden shadow-sm">
               <div className="flex justify-between items-center mb-6 border-b border-[#edebe9] pb-4">
-                <span className="text-sm font-semibold text-slate-700">Sơ Đồ Phân Bố Trạm Ngủ</span>
+                <span className="text-sm font-semibold text-slate-700">Cabin Cluster Layout Map</span>
                 
                 {/* Visual Key Indicators */}
                 <div className="flex gap-4 text-xs font-mono">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                    <span className="text-slate-500">Có sẵn</span>
+                    <span className="text-slate-500">Available</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                    <span className="text-slate-500">Đang nghỉ</span>
+                    <span className="text-slate-500">Occupied</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
-                    <span className="text-slate-500">Khử trùng (UV-C)</span>
+                    <span className="text-slate-500">Sterilizing (UV-C)</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function BookingGrid() {
                     >
                       {/* Pod status accent badge */}
                       <span className={`inline-flex px-2 py-0.5 rounded-full border text-[10px] font-mono font-medium mb-3 ${statusGlow}`}>
-                        {pod.status === "Sterilizing" ? `Khử trùng ${pod.countdown}s` : pod.status === "Available" ? "Còn trống" : "Đầy chỗ"}
+                        {pod.status === "Sterilizing" ? `Sterilizing ${pod.countdown}s` : pod.status === "Available" ? "Available" : "Occupied"}
                       </span>
 
                       {/* Icon Graphic */}
@@ -145,7 +145,7 @@ export default function BookingGrid() {
 
                       {/* Title */}
                       <h4 className="text-sm font-bold text-slate-800">{pod.name}</h4>
-                      <p className="text-[10px] text-slate-400 font-mono mt-1">CÁCH ÂM SHIELD</p>
+                      <p className="text-[10px] text-slate-400 font-mono mt-1">ACOUSTIC SHIELD</p>
                     </div>
                   );
                 })}
@@ -158,7 +158,7 @@ export default function BookingGrid() {
           <div className="lg:col-span-4 bg-white border border-[#edebe9] rounded-3xl p-6 space-y-6 text-left relative overflow-hidden shadow-sm">
             <h3 className="text-lg font-bold text-slate-800 border-b border-[#edebe9] pb-3 flex items-center gap-2 font-serif">
               <Zap className="w-5 h-5 text-[#cba258]" />
-              Bảng Tính Chi Phí Thuê
+              Hourly Pricing Calculator
             </h3>
 
             {selectedPodId ? (
@@ -172,21 +172,21 @@ export default function BookingGrid() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <span className="absolute bottom-2 left-3 text-[9px] font-mono text-[#cba258] font-bold bg-white px-2.5 py-0.5 rounded-full border border-[#cba258]/30">
-                    GỖ SỒI TỰ NHIÊN
+                    NATURAL OAK WOOD
                   </span>
                 </div>
 
                 <div className="p-4 rounded-xl bg-[#f2f0eb] border border-[#edebe9] space-y-1">
-                  <p className="text-[10px] text-slate-500 font-mono">CABIN ĐÃ CHỌN</p>
+                  <p className="text-[10px] text-slate-500 font-mono">SELECTED CABIN</p>
                   <p className="text-base font-bold text-[#006241]">{selectedPod.name}</p>
-                  <p className="text-[10px] text-slate-500">Trạng thái: <span className="text-emerald-600 font-bold">Còn trống</span></p>
+                  <p className="text-[10px] text-slate-500">Status: <span className="text-emerald-600 font-bold">Available</span></p>
                 </div>
 
                 {/* Duration Hour Step Slider Element */}
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-slate-600 font-semibold">Thời lượng thuê</span>
-                    <span className="text-base font-extrabold text-[#00754A]">{bookingHours} Giờ</span>
+                    <span className="text-slate-600 font-semibold">Duration hours</span>
+                    <span className="text-base font-extrabold text-[#00754A]">{bookingHours} Hours</span>
                   </div>
 
                   <input
@@ -199,31 +199,31 @@ export default function BookingGrid() {
                     className="w-full h-1.5 bg-[#edebe9] rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="flex justify-between text-[10px] text-slate-500 font-mono">
-                    <span>2h (Tối thiểu)</span>
+                    <span>2h (Min)</span>
                     <span>7h</span>
-                    <span>12h (Tối đa)</span>
+                    <span>12h (Max)</span>
                   </div>
                 </div>
 
                 {/* Pricing Calculation Display Block */}
                 <div className="pt-4 border-t border-[#edebe9] space-y-2">
                   <div className="flex justify-between text-xs text-slate-600">
-                    <span>Giá thuê cơ bản (2 giờ đầu)</span>
+                    <span>Base package (first 2 hours)</span>
                     <span className="font-semibold text-slate-800">69,000đ</span>
                   </div>
                   {bookingHours > 2 && (
                     <div className="flex justify-between text-xs text-slate-600">
-                      <span>Phụ trội (+{bookingHours - 2}h × 15k)</span>
+                      <span>Incremental hours (+{bookingHours - 2}h × 15k)</span>
                       <span className="font-semibold text-slate-800">+{((bookingHours - 2) * 15000).toLocaleString()}đ</span>
                     </div>
                   )}
                   <div className="flex justify-between items-end pt-2 border-t border-[#edebe9]">
-                    <span className="text-sm font-bold text-slate-800">Tổng cộng</span>
+                    <span className="text-sm font-bold text-slate-800">Total Amount</span>
                     <div className="text-right">
                       <p className="text-2xl font-extrabold text-[#006241]">
                         {currentPrice.toLocaleString("vi-VN")} VND
                       </p>
-                      <p className="text-[9px] text-slate-400 font-mono">ĐÃ BAO GỒM VAT</p>
+                      <p className="text-[9px] text-slate-400 font-mono">VAT INCLUDED</p>
                     </div>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export default function BookingGrid() {
                   onClick={handleCheckout}
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#00754A] hover:bg-[#006241] text-white font-bold py-3.5 px-6 rounded-full shadow-md active:scale-95 transition-all duration-200 cursor-pointer"
                 >
-                  Xác nhận đặt chỗ &amp; Nhận Cabin
+                  Confirm Mock Payment &amp; Unlock Pod
                 </button>
               </div>
             ) : (
@@ -242,25 +242,25 @@ export default function BookingGrid() {
                   <ShieldAlert className="w-5 h-5" />
                 </div>
                 <p className="text-slate-500 text-sm font-light">
-                  Vui lòng nhấp vào một cabin còn trống (màu xanh lá) trên sơ đồ để bắt đầu thiết lập phiên nghỉ của bạn.
+                  Please select an available cabin (green) on the layout map to open the progressive calculator engine.
                 </p>
               </div>
             )}
 
             {/* Quick Pricing Table info */}
             <div className="p-4 rounded-xl bg-[#f9f8f6] border border-[#edebe9] text-xs text-slate-500 space-y-1.5 font-mono">
-              <p className="font-bold text-[#006241] border-b border-[#edebe9] pb-1.5 mb-1.5">QUY ĐỊNH BẢNG GIÁ</p>
+              <p className="font-bold text-[#006241] border-b border-[#edebe9] pb-1.5 mb-1.5">PRICING POLICY</p>
               <div className="flex justify-between">
-                <span>Gói 2 giờ đầu (cố định)</span>
+                <span>Base Rate (first 2h flat)</span>
                 <span className="text-slate-700 font-semibold">69,000đ</span>
               </div>
               <div className="flex justify-between">
-                <span>Mỗi giờ phụ trội</span>
-                <span className="text-slate-700 font-semibold">+15,000đ/giờ</span>
+                <span>Subsequent hourly rate</span>
+                <span className="text-slate-700 font-semibold">+15,000đ/hour</span>
               </div>
               <div className="flex justify-between">
-                <span>Thời lượng tối đa</span>
-                <span className="text-slate-700 font-semibold">12 Giờ</span>
+                <span>Maximum session cap</span>
+                <span className="text-slate-700 font-semibold">12 Hours</span>
               </div>
             </div>
 
