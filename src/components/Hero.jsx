@@ -64,7 +64,7 @@ export default function Hero() {
             </p>
 
             {/* Quick Selling Props */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[#edebe9]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#edebe9]">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-[#edebe9] text-[#006241]">
                   <ShieldCheck className="w-5 h-5" />
@@ -97,10 +97,10 @@ export default function Hero() {
             </div>
 
             {/* Action buttons */}
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
               <button
                 onClick={scrollToBooking}
-                className="group inline-flex items-center gap-2 bg-[#00754A] hover:bg-[#006241] text-white font-bold px-8 py-3.5 rounded-full shadow-md active:scale-95 transition-all duration-200 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 bg-[#00754A] hover:bg-[#006241] text-white font-bold px-8 py-3.5 rounded-full shadow-md active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 Book Your Cabin Now
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

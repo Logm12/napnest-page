@@ -12,7 +12,7 @@ export default function LocationSection() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <MapPin className="w-3.5 h-3.5" />
-            <span>HUB LOCATION</span>
+            <span>OUR LOCATION</span>
           </div>
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
             Flagship Xuan Thuy Mobile Hub

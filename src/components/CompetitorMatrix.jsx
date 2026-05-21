@@ -50,7 +50,7 @@ export default function CompetitorMatrix() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-600/20 bg-emerald-50 text-emerald-800 text-xs font-mono font-medium">
             <Trophy className="w-3.5 h-3.5" />
-            <span>COMPETITIVE COMPARISON</span>
+            <span>COMPETITIVE ADVANTAGE</span>
           </div>
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
             Why Choose NapNest?

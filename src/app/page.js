@@ -22,68 +22,68 @@ export default function Home() {
         Strict PC Layout Wrapper bounding content safely between 1280px and 1920px width brackets. 
         Centered, with overflow protection.
       */}
-      <div className="max-w-[1920px] min-w-[1280px] mx-auto bg-[#f9f8f6] overflow-hidden relative shadow-md">
+      <div className="max-w-[1920px] w-full mx-auto bg-[#f9f8f6] overflow-hidden relative shadow-md">
         
         {/* PREMIUM FIXED TOP NAVIGATION */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#edebe9] max-w-[1920px] min-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#edebe9] max-w-[1920px] w-full mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
           {/* Logo & Branding */}
           <div className="flex items-center gap-3.5 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <img 
               src="/images/logo.png" 
               alt="NapNest Logo" 
-              className="w-14 h-14 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm transition-transform duration-300 group-hover:scale-105"
+              className="w-11 h-11 md:w-14 md:h-14 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col text-left">
-              <span className="text-xl font-bold tracking-tight text-[#006241] font-serif leading-none">
+              <span className="text-lg md:text-xl font-bold tracking-tight text-[#006241] font-serif leading-none">
                 NapNest
               </span>
-              <span className="text-[9px] text-[#cba258] font-mono tracking-widest font-bold uppercase mt-1">
+              <span className="text-[8px] md:text-[9px] text-[#cba258] font-mono tracking-widest font-bold uppercase mt-1">
                 Rest • Recharge • Repeat
               </span>
             </div>
           </div>
 
-          {/* Quick Nav Links Styled as Cafe Outlines */}
-          <nav className="flex items-center gap-3">
+          {/* Quick Nav Links Styled as Cafe Outlines - Desktop Only */}
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
               About
             </button>
             
             <button
               onClick={() => document.getElementById("booking-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Booking Grid
+              Booking
             </button>
             
             <button
               onClick={() => document.getElementById("showcase-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
               Showcase
             </button>
 
             <button
               onClick={() => document.getElementById("team-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Team
+              Our Team
             </button>
 
             <button
               onClick={() => document.getElementById("location-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Hub Location
+              Our Location
             </button>
 
             {activeSession && (
               <button
                 onClick={() => document.getElementById("simulator-section")?.scrollIntoView({ behavior: "smooth" })}
-                className="border border-amber-300 bg-amber-50 rounded-full px-4 py-2 hover:bg-amber-100/60 text-amber-800 font-bold cursor-pointer text-xs transition-colors animate-pulse"
+                className="border border-amber-300 bg-amber-50 rounded-full px-3 py-1.5 hover:bg-amber-100/60 text-amber-800 font-bold cursor-pointer text-xs transition-colors animate-pulse"
               >
                 Your Cabin
               </button>
@@ -91,16 +91,16 @@ export default function Home() {
 
             <button
               onClick={() => document.getElementById("matrix-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Tech Features
+              Competitive Advantage
             </button>
 
             <button
               onClick={() => document.getElementById("investor-section")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-[#edebe9] bg-white rounded-full px-4 py-2 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
+              className="border border-[#edebe9] bg-white rounded-full px-3 py-1.5 hover:bg-[#edebe9]/40 text-slate-700 font-semibold cursor-pointer text-xs transition-colors"
             >
-              Investor Pitch
+              Operational Capacity
             </button>
           </nav>
 
@@ -184,9 +184,9 @@ export default function Home() {
               <h4 className="text-sm font-bold text-white font-serif">Quick Links</h4>
               <ul className="space-y-2 text-[#edebe9]/60 font-light">
                 <li><a href="#" className="hover:text-white transition-colors">About Project</a></li>
-                <li><a href="#booking-section" className="hover:text-white transition-colors">Booking Grid</a></li>
-                <li><a href="#showcase-section" className="hover:text-white transition-colors">Cabin Showcase</a></li>
-                <li><a href="#location-section" className="hover:text-white transition-colors">Hub Location</a></li>
+                <li><a href="#booking-section" className="hover:text-white transition-colors">Booking</a></li>
+                <li><a href="#showcase-section" className="hover:text-white transition-colors">Showcase</a></li>
+                <li><a href="#location-section" className="hover:text-white transition-colors">Our Location</a></li>
               </ul>
             </div>
 
