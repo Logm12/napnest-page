@@ -60,7 +60,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base text-slate-700 max-w-xl font-normal leading-relaxed">
-              The NapNest mobile nap hub provides quiet, clean, and cozy private resting modules in Hanoi for young professionals and students (focusing on ages 18-25). Supercharge your day with a quick 30-60 min rest!
+              The NapNest mobile nap hub provides quiet, clean, and cozy private resting modules in Hanoi for young professionals and students (focusing on ages 18-25). Supercharge your day with a quick rest!
             </p>
 
             {/* Quick Selling Props */}
