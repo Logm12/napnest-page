@@ -15,7 +15,7 @@ export default function LocationSection() {
             <span>OUR LOCATION</span>
           </div>
           <h2 className="text-4xl font-extrabold text-[#006241] tracking-tight font-serif">
-            Flagship Xuan Thuy Mobile Hub
+            Xuan Thuy Hub
           </h2>
           <p className="text-slate-650 font-light">
             Conveniently situated within the university corridor, offering immediate relief and study breaks for students and office workers alike.
