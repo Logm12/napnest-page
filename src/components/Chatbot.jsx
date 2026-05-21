@@ -95,9 +95,9 @@ export default function Chatbot() {
           {/* Header */}
           <div className="bg-[#1E3932] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center border border-white/20 relative">
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#1E3932]"></span>
-                <img src="/images/logo.png" alt="NapNest Logo" className="w-7 h-7 rounded-full object-contain bg-white" />
+              <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center border border-white/20 relative shrink-0">
+                <span className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#1E3932] z-10"></span>
+                <img src="/images/logo.png" alt="NapNest Logo" className="w-10 h-10 rounded-full object-contain bg-white" />
               </div>
               <div className="text-left">
                 <h4 className="text-sm font-bold tracking-tight">NapNest AI Assistant</h4>

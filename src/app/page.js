@@ -27,15 +27,20 @@ export default function Home() {
         {/* PREMIUM FIXED TOP NAVIGATION */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#edebe9] max-w-[1920px] min-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo & Branding */}
-          <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <div className="flex items-center gap-3.5 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <img 
               src="/images/logo.png" 
               alt="NapNest Logo" 
-              className="w-10 h-10 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm"
+              className="w-14 h-14 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-xl font-bold tracking-tight text-[#006241] font-serif">
-              NapNest
-            </span>
+            <div className="flex flex-col text-left">
+              <span className="text-xl font-bold tracking-tight text-[#006241] font-serif leading-none">
+                NapNest
+              </span>
+              <span className="text-[9px] text-[#cba258] font-mono tracking-widest font-bold uppercase mt-1">
+                Rest • Recharge • Repeat
+              </span>
+            </div>
           </div>
 
           {/* Quick Nav Links Styled as Cafe Outlines */}
@@ -154,15 +159,20 @@ export default function Home() {
             
             {/* Brand column */}
             <div className="space-y-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3.5">
                 <img 
                   src="/images/logo.png" 
                   alt="NapNest Logo" 
-                  className="w-10 h-10 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm"
+                  className="w-14 h-14 rounded-full object-contain bg-white border border-[#edebe9] shadow-sm"
                 />
-                <span className="text-xl font-bold tracking-tight text-white font-serif">
-                  NapNest
-                </span>
+                <div className="flex flex-col text-left">
+                  <span className="text-xl font-bold tracking-tight text-white font-serif leading-none">
+                    NapNest
+                  </span>
+                  <span className="text-[9px] text-[#cba258] font-mono tracking-widest font-bold uppercase mt-1">
+                    Rest • Recharge • Repeat
+                  </span>
+                </div>
               </div>
               <p className="text-xs text-[#edebe9]/60 leading-relaxed font-light">
                 First premium, clinical-grade mobile nap hub network in Vietnam. Designed to provide high-quality acoustic silence and clinical-grade UV-C sanitation for students and young working professionals.
