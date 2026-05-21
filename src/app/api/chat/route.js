@@ -62,6 +62,23 @@ export async function POST(req) {
       });
     }
 
+    const isReasoningModel = modelName.includes("gpt-5") || modelName.includes("o1") || modelName.includes("o3");
+    
+    const apiPayload = {
+      model: modelName,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        ...messages.map(m => ({ role: m.role, content: m.content }))
+      ]
+    };
+
+    if (isReasoningModel) {
+      apiPayload.max_completion_tokens = 500;
+    } else {
+      apiPayload.temperature = 0.7;
+      apiPayload.max_tokens = 500;
+    }
+
     // Call OpenAI API
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -69,15 +86,7 @@ export async function POST(req) {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${apiKey}`
       },
-      body: JSON.stringify({
-        model: modelName,
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          ...messages.map(m => ({ role: m.role, content: m.content }))
-        ],
-        temperature: 0.7,
-        max_tokens: 500
-      })
+      body: JSON.stringify(apiPayload)
     });
 
     if (!response.ok) {
