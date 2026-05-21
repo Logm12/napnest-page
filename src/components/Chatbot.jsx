@@ -23,6 +23,28 @@ export default function Chatbot() {
     "Highlight features?"
   ];
 
+  const renderMessageContent = (text, isUser) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*([^*]+)\*\*/g);
+    if (parts.length === 1) {
+      return <p className="whitespace-pre-line">{text}</p>;
+    }
+    return (
+      <p className="whitespace-pre-line">
+        {parts.map((part, index) => {
+          if (index % 2 === 1) {
+            return (
+              <strong key={index} className={`font-bold ${isUser ? "text-amber-250" : "text-[#00754A]"}`}>
+                {part}
+              </strong>
+            );
+          }
+          return part;
+        })}
+      </p>
+    );
+  };
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -126,7 +148,7 @@ export default function Chatbot() {
                       : "bg-white text-slate-800 border border-[#edebe9] rounded-bl-none shadow-sm font-sans"
                   }`}
                 >
-                  <p className="whitespace-pre-line">{msg.content}</p>
+                  {renderMessageContent(msg.content, msg.role === "user")}
                 </div>
               </div>
             ))}
