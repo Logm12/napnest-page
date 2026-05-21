@@ -165,6 +165,19 @@ export default function BookingGrid() {
 
             {selectedPodId ? (
               <div className="space-y-6">
+                {/* Product Thumbnail Graphic */}
+                <div className="rounded-xl overflow-hidden h-32 relative border border-slate-800">
+                  <img
+                    src="/images/showcase-3.jpg"
+                    alt="Oak Sleep Pod"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                  <span className="absolute bottom-2 left-3 text-[9px] font-mono text-amber-400 font-semibold bg-slate-950/80 px-2 py-0.5 rounded border border-amber-500/30">
+                    OAK WOOD COMPOSITE
+                  </span>
+                </div>
+
                 <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20 space-y-1">
                   <p className="text-xs text-slate-400 font-mono">SELECTED POD</p>
                   <p className="text-base font-semibold text-white">{selectedPod.name}</p>

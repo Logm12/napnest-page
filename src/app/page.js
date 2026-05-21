@@ -3,6 +3,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import BookingGrid from "@/components/BookingGrid";
+import Showcase from "@/components/Showcase";
 import PodSimulator from "@/components/PodSimulator";
 import CompetitorMatrix from "@/components/CompetitorMatrix";
 import FinancialsBoard from "@/components/FinancialsBoard";
@@ -38,6 +39,13 @@ export default function Home() {
               className="hover:text-blue-400 transition-colors cursor-pointer"
             >
               Grid Map
+            </button>
+            
+            <button
+              onClick={() => document.getElementById("showcase-section")?.scrollIntoView({ behavior: "smooth" })}
+              className="hover:text-blue-400 transition-colors cursor-pointer"
+            >
+              Cabin Showcase
             </button>
             
             {activeSession && (
@@ -82,6 +90,9 @@ export default function Home() {
 
         {/* MOCK BOOKING GRID CONTAINER */}
         <BookingGrid />
+
+        {/* COZY OAK SHOWCASE IMAGES CONTAINER */}
+        <Showcase />
 
         {/* IN-POD SIMULATION CONSOLE CONTAINER */}
         <PodSimulator />
