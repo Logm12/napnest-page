@@ -5,9 +5,9 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const BookingContext = createContext();
 
 const STATIONS = [
-  { id: "xuanthuy", name: "NapNest Flagship - 144 Xuan Thuy (VNU)", city: "Hanoi" },
-  { id: "caugiay", name: "NapNest Premium - Cau Giay Center", city: "Hanoi" },
-  { id: "dongda", name: "NapNest Express - Dong Da Hub", city: "Hanoi" }
+  { id: "xuanthuy", name: "NapNest Flagship", city: "Hanoi" },
+  { id: "caugiay", name: "NapNest Premium", city: "Hanoi" },
+  { id: "dongda", name: "NapNest Express", city: "Hanoi" }
 ];
 
 const INITIAL_PODS = [
